@@ -8,7 +8,7 @@ export default function SensorList() {
             <thead className="dark:bg-gray-900 bg-gray-100">
               <tr>
                 <td className="text-xs font-semibold text-gray-800 dark:text-gray-100 uppercase sm:py-8 py-4 sm:pl-6 pl-4">
-                  <div className="flex items-center">LIGHT ID</div>
+                  <div className="flex items-center">Device ID</div>
                 </td>
                 <td className="text-xs font-semibold text-gray-800 dark:text-gray-100 pl-6 uppercase">
                   <div className="flex items-center">TEMP (Current)</div>
@@ -24,7 +24,7 @@ export default function SensorList() {
             <tbody className="bg-white dark:bg-gray-800">
               <tr className="border-b border-gray-200 dark:border-gray-900">
                 <td className="py-4 sm:pl-6 pl-4">
-                  <p className="text-sm leading-none text-gray-800 dark:text-gray-100">LIGHT01</p>
+                  <p className="text-sm leading-none text-gray-800 dark:text-gray-100">DEVICE01</p>
                 </td>
 
                 <td className="py-4 sm:pl-6 pl-4">

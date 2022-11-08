@@ -5,7 +5,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 export default function Layout() {
   let location = useLocation();
 
-  const routes = ['/', '/lights', '/performance', '/settings']
+  const routes = ['/', '/devices', '/performance', '/settings']
 
   const getActiveClass = (path) => {
     if (location.pathname === path) {
@@ -52,8 +52,8 @@ export default function Layout() {
                 </div>
               </Link>
             </li>
-            <li className={`flex w-full justify-between hover:text-gray-300 cursor-pointer items-center mb-6 ${getActiveClass("/lights")}`}>
-              <Link to="/lights">
+            <li className={`flex w-full justify-between hover:text-gray-300 cursor-pointer items-center mb-6 ${getActiveClass("/devices")}`}>
+              <Link to="/devices">
                 <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ export default function Layout() {
                     <path stroke="none" d="M0 0h24v24H0z"></path>
                     <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"></path>
                   </svg>
-                  <span className="text-sm ml-2">Lights</span>
+                  <span className="text-sm ml-2">Devices</span>
                 </div>
               </Link>
             </li>
