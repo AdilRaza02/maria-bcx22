@@ -1,0 +1,3 @@
+START server via:
+`flask --app app run --reload`
+

@@ -9,8 +9,26 @@ import fire_alarm
 
 frontend_api = Blueprint('frontend_api', __name__)
 
+
+@frontend_api.route("/api/fe/temperature/<sensor_id>")
+def sensor_temprature_series(sensor_id):
+    data = []
+
+    query = db.session.query(Temperature).filter(Temperature.sensor==   sensor_id).all()
+
+    for sensor in query:
+        data.append({
+            'id': sensor.sensor,
+            'temperature': sensor.value,
+            'timestamp': floor(sensor.timestamp.timestamp())
+        })
+
+    return json.dumps(data)
+
+
+
 @frontend_api.route("/api/fe/temperature/")
-def sensor_temprature():
+def sensor_temperature():
     data = []
 
     subquery = db.session.query(
