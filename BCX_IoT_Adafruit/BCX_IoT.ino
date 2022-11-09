@@ -17,6 +17,24 @@ void setup() {
   Serial.begin(9600);
 }
 
+const float threshold_percent_temperature = 0.2f; // 0.2 = 20%
+float min_temp;
+float max_temp;
+
+void initialize_threshold_temperature(){
+  float temp_total = 0;
+  int rounds = 10;
+  
+  for(int i = 0; i < rounds; i ++){
+    temp_total = temp_total + CircuitPlayground.temperature();
+  }
+ 
+  temp_total = temp_total / rounds;
+  
+  max_temp = temp_total + (temp_total * threshold_percent_temperature); // current_temperature + threshold
+  min_temp = temp_total - (temp_total * threshold_percent_temperature); // current_temperature - threshold
+}
+
 void setLightColor(int value) {
   CircuitPlayground.strip.setBrightness(value);  // 0 to 255
   CircuitPlayground.strip.show();
