@@ -27,6 +27,7 @@ void initialize_threshold_temperature(){
   
   for(int i = 0; i < rounds; i ++){
     temp_total = temp_total + CircuitPlayground.temperature();
+    delay(100);
   }
  
   temp_total = temp_total / rounds;
