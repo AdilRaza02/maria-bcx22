@@ -31,6 +31,7 @@ const collectDeviceData = async () => {
     port.on("data", async (data) => {
       try {
         const Data = JSON.parse(data);
+        ADD_DEVICE_DATA(Data)
         console.log(Data);
       } catch (error) {
         console.log(error);

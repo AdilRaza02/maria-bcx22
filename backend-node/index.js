@@ -2,8 +2,11 @@ const express = require("express");
 const { GET_DEVICES_DATA, GET_DEVICE_DATA, GET_LATEST_DEVICES_DATA } = require("./db");
 const utils = require("./utils");
 const app = express();
+const cors = require('cors');
 const port = 3000;
 utils.CONNECT_DB();
+app.use(cors());
+
 
 app.get("/devices", async (req, res) => {
   try {
