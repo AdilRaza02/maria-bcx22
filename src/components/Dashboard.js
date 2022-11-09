@@ -69,9 +69,9 @@ export default function Dashboard() {
 
   React.useEffect(() => {
     getLatestConnectedDevicesData();
-    // setInterval(() => {
-    //   getLatestConnectedDevicesData();
-    // }, 5000);
+    setInterval(() => {
+      getLatestConnectedDevicesData();
+    }, 1000);
   }, []);
 
   return (
