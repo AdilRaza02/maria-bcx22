@@ -9,18 +9,20 @@ const addDeviceData = async (data) => {
 };
 
 const getDevicesData = async () => {
-  const devices = await Devices.find({});
+  const devices = await Devices.find({}).sort({ createdAt: "desc" });
   return devices;
 };
 
 const getDeviceData = async (deviceId) => {
-  const device = await Devices.find({ deviceId });
+  const device = await Devices.find({ deviceId }).sort({ createdAt: "desc" });
   return device;
 };
 
 const getLatestDevicesData = async () => {
   const devices = await Devices.distinct("deviceId");
-  const latestEntries = await Devices.find({ deviceId: { $in: devices } }).sort({createdAt:-1}).limit(devices.length);
+  const latestEntries = await Devices.find({ deviceId: { $in: devices } })
+    .sort({ createdAt: "desc" })
+    .limit(devices.length);
   return latestEntries;
 };
 
