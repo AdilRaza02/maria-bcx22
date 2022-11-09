@@ -35,7 +35,7 @@ function DashboardTable({ devices }) {
                           <p className="text-sm font-semibold leading-none text-right text-gray-800">{moment(device.createdAt).fromNow()}</p>
                           <div className="flex items-center space-x-1 mt-1">
                             <div className="h-4 w-4 rounded-full border" style={{ backgroundColor: `#${device.color.toString(16)}` }}></div>
-                            <p className="text-sm text-gray-700">Room Light Color</p>
+                            <p className="text-sm text-gray-700">Space Light Color</p>
                           </div>
                         </div>
                       </td>
